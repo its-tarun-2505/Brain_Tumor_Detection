@@ -45,11 +45,6 @@ project/
 │ ├── utils/ # Utilities
 │ └── uploads/ # Uploaded images
 └── otp-service/ # Node.js OTP service
-
-yaml
-Copy
-Edit
-
 ---
 
 ## ✅ Prerequisites
@@ -63,66 +58,95 @@ Edit
 
 ## 🔧 Backend Setup
 
-1. Create a virtual environment:
+1. Create and activate a virtual environment:
 
-bash : 
-   python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
-Install dependencies: 
-   cd server
-   pip install -r requirements.txt
+2. Install Python dependencies:
 
-Set up environment variables:
-   Create a .env file in the server/ directory with the following content:
-      MONGO_URI=your_mongodb_uri
-      JWT_SECRET=your_jwt_secret
-      OTP_SERVICE_URL=http://localhost:3001/api/send-otp
+    ```bash
+    cd server
+    pip install -r requirements.txt
+    ```
 
+3. Set environment variables in a `.env` file:
 
-Place the pre-trained model in:
-   server/model/vgg19_mlModel.h5
+    ```
+    MONGO_URI=your_mongodb_uri
+    JWT_SECRET=your_jwt_secret
+    OTP_SERVICE_URL=http://localhost:3001/api/send-otp
+    ```
 
-Start the Flask server:
-   python app.py
------------------------------------------------------------------------------
-   
-✉️ OTP Service Setup
-Install dependencies:
-   cd otp-service
-   npm install
+4. Add the pre-trained model file to:  
+   `server/model/vgg19_mlModel.h5`
 
-Set up environment variables:
-   Create a .env file in the otp-service/ directory with:
-      EMAIL_SERVICE=gmail
-      EMAIL_USER=your_email@example.com
-      EMAIL_PASSWORD=your_email_password
-      EMAIL_FROM=Brain Tumor Detection <no-reply@braintumordetection.com>
-      PORT=3001
-      
-Start the OTP service:
-   npm start
------------------------------------------------------------------------------
+5. Run the Flask server:
 
-🌐 Frontend Setup
-Install dependencies:
-   cd client
-   npm install
+    ```bash
+    python app.py
+    ```
 
-Start the React development server:
-   npm start
+---
 
-📋 Usage
-Register a new account or log in
-Verify your email with the OTP sent to your inbox
-Upload an MRI scan image on the Predict page
-View the prediction result
-Check your prediction history in the Dashboard
+### ✉️ OTP Service Setup
 
+1. Install Node.js dependencies:
 
-🙏 Acknowledgements
-VGG19 model architecture
+    ```bash
+    cd otp-service
+    npm install
+    ```
 
-Medical image datasets used for training
+2. Create a `.env` file with the following:
 
-Open-source libraries and frameworks used in this project
+    ```
+    EMAIL_SERVICE=gmail  # or another email provider
+    EMAIL_USER=your_email@example.com
+    EMAIL_PASSWORD=your_email_password
+    EMAIL_FROM=Brain Tumor Detection <no-reply@braintumordetection.com>
+    PORT=3001
+    ```
+
+3. Start the OTP microservice:
+
+    ```bash
+    npm start
+    ```
+
+---
+
+### 🌐 Frontend Setup
+
+1. Install frontend dependencies:
+
+    ```bash
+    cd client
+    npm install
+    ```
+
+2. Run the React development server:
+
+    ```bash
+    npm start
+    ```
+
+---
+
+## 📋 Usage
+
+1. Register a new user account  
+2. Verify your email via OTP  
+3. Upload an MRI image on the **Predict** page  
+4. View the tumor prediction result  
+5. Access prediction history in the **Dashboard**  
+
+---
+
+## 🙏 Acknowledgements
+
+- VGG19 CNN architecture  
+- Open-source medical image datasets  
+- Open-source tools and libraries that power this project  
