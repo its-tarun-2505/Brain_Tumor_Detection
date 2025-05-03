@@ -1,0 +1,17 @@
+{
+  "name": "brain-tumor-detection-otp-service",
+  "version": "1.0.0",
+  "description": "OTP Email Service for Brain Tumor Detection App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.10.1",
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,40 @@
+# Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.env
+*.log
+server/uploads/*
+!server/uploads/.gitkeep
+server/model/*.h5
+
+# OTP Service
+node_modules/
+otp-service/node_modules/
+otp-service/.env
+
+# Frontend
+client/node_modules
+client/.pnp
+client/.pnp.js
+client/coverage
+client/build
+client/.DS_Store
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo 
